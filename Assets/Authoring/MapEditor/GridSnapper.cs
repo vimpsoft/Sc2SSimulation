@@ -104,6 +104,7 @@ namespace Sc2Simulation.Authoring
                         gridOccupier.Y = DraggedGridY;
                     }
                     Undo.RegisterCreatedObjectUndo(newObj, "Object dragged to scene");
+                    Selection.activeGameObject = newObj;
                     DraggedObject = default;
                     DraggedGridOccupier = default;
                 }
