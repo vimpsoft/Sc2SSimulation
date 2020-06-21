@@ -95,7 +95,7 @@ namespace Sc2Simulation.Authoring
                 if (Event.current.type == EventType.DragPerform)
                 {
                     DragAndDrop.AcceptDrag();
-                    var newObj = Instantiate(DraggedObject);
+                    var newObj = (GameObject)PrefabUtility.InstantiatePrefab(DraggedObject);
                     newObj.transform.position = new Vector3(DraggedGridX * mapGrid.GridX, 0f, DraggedGridY * mapGrid.GridY);
                     var gridOccupier = newObj.GetComponent<GridOccupier>();
                     if (gridOccupier != default)
