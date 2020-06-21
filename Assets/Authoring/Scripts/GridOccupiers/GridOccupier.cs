@@ -12,7 +12,7 @@ namespace Sc2Simulation.Authoring
 
         public Vector2Int Size;
 
-        [HideInInspector]
+        //[HideInInspector]
         public GridOccupierRotation Rotation;
     }
 }
