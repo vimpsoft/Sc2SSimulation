@@ -1,9 +1,10 @@
-﻿using UnityEditor;
+﻿using Sc2Simulation.Brirge;
+using UnityEditor;
 using UnityEngine;
 
 namespace Sc2Simulation.Authoring
 {
-    [RequireComponent(typeof(MapGrid)), ExecuteInEditMode]
+    [RequireComponent(typeof(MapGridData)), ExecuteInEditMode]
     public class GridGizmoDrawer : MonoBehaviour
     {
         public Color ActiveColor = Color.green;
@@ -21,7 +22,7 @@ namespace Sc2Simulation.Authoring
             if (_instance == default)
                 return;
 
-            var mapGrid = _instance.GetComponent<MapGrid>();
+            var mapGrid = _instance.GetComponent<MapGridData>();
             if (mapGrid == default)
                 return;
 

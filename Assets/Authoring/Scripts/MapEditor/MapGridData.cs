@@ -3,9 +3,9 @@
 namespace Sc2Simulation.Authoring
 {
     [ExecuteInEditMode]
-    public class MapGrid : MonoBehaviour
+    public class MapGridData : MonoBehaviour
     {
-        public static MapGrid Instance;
+        public static MapGridData Instance;
 
         [Range(0, float.MaxValue)]
         public float GridX = 1;

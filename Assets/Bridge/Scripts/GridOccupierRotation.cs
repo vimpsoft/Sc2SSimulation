@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sc2Simulation.Authoring
+namespace Sc2Simulation.Brirge
 {
     [Serializable]
     public enum GridOccupierRotation

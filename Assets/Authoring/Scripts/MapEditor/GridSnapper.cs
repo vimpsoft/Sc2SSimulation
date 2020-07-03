@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Sc2Simulation.Authoring
 {
-    [RequireComponent(typeof(MapGrid)), ExecuteInEditMode]
+    [RequireComponent(typeof(MapGridData)), ExecuteInEditMode]
     public class GridSnapper : MonoBehaviour
     {
         public static GameObject DraggedObject;
@@ -43,7 +43,7 @@ namespace Sc2Simulation.Authoring
         {
             if (DraggedObject == default)
                 return;
-            var mapGrid = _mapGridInstanceTransform.GetComponent<MapGrid>();
+            var mapGrid = _mapGridInstanceTransform.GetComponent<MapGridData>();
             if (mapGrid == default)
                 return;
 
@@ -59,7 +59,7 @@ namespace Sc2Simulation.Authoring
         {
             if (_mapGridInstanceTransform == default)
                 return;
-            var mapGrid = _mapGridInstanceTransform.GetComponent<MapGrid>();
+            var mapGrid = _mapGridInstanceTransform.GetComponent<MapGridData>();
             if (mapGrid == default)
                 return;
             if (mapGrid.GridX == 0 || mapGrid.GridY == 0)

@@ -6,7 +6,7 @@ namespace Sc2Simulation.Authoring
     public class EditorTimeGridSnapper : MonoBehaviour
     {
         [SerializeField]
-        private GameObject _gridSnapperOffset;
+        private Transform[] _gridSnapperTargets;
 
         private GridOccupier _occupierCache;
 
@@ -17,10 +17,11 @@ namespace Sc2Simulation.Authoring
 
         private void Update()
         {
-            _occupierCache.X = Mathf.FloorToInt(transform.position.x / MapGrid.Instance.GridX);
-            _occupierCache.Y = Mathf.FloorToInt(transform.position.z / MapGrid.Instance.GridY);
-            var snappedPosition = new Vector3(_occupierCache.X * MapGrid.Instance.GridX, transform.position.y, _occupierCache.Y * MapGrid.Instance.GridY);
-            _gridSnapperOffset.transform.position = snappedPosition;
+            _occupierCache.X = Mathf.FloorToInt(transform.position.x / MapGridData.Instance.GridX);
+            _occupierCache.Y = Mathf.FloorToInt(transform.position.z / MapGridData.Instance.GridY);
+            var snappedPosition = new Vector3(_occupierCache.X * MapGridData.Instance.GridX, transform.position.y, _occupierCache.Y * MapGridData.Instance.GridY);
+            for (int i = 0; i < _gridSnapperTargets.Length; i++)
+                _gridSnapperTargets[i].position = snappedPosition;
         }
     }
 }
