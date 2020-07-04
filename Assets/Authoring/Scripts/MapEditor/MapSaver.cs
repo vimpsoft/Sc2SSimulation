@@ -32,7 +32,7 @@ namespace Sc2Simulation.Authoring
 
                 var entityHolderTransofrm = entityHolder.transform;
                 newInfo.Position = new Vector2(entityHolderTransofrm.position.x, entityHolderTransofrm.position.z);
-                newInfo.Rotation = entityHolderTransofrm.rotation.eulerAngles.y;
+                newInfo.Rotation = new Vector4(entityHolderTransofrm.rotation.x, entityHolderTransofrm.rotation.y, entityHolderTransofrm.rotation.z, entityHolderTransofrm.rotation.w);
 
                 infos[i] = newInfo;
             }

@@ -10,6 +10,6 @@ namespace Sc2Simulation.Brirge
         public Vector2Int GridPosition;
         public GridOccupierRotation GridRotation;
         public Vector2 Position;
-        public float Rotation;
+        public Vector4 Rotation;
     }
 }
