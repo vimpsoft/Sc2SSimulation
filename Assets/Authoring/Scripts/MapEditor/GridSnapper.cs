@@ -9,10 +9,13 @@ namespace Sc2Simulation.Authoring
     {
         public static GameObject DraggedObject;
         public static GridOccupier DraggedGridOccupier;
-        public static int DraggedGridX;
-        public static int DraggedGridY;
 
         public static bool IsSnapping;
+
+        public static int DraggedGridX;
+        public static int DraggedGridY;
+        private static int _initialDraggedGridX;
+        private static int _initialDraggedGridY;
 
         private static Transform _mapGridInstanceTransform;
 
@@ -69,10 +72,12 @@ namespace Sc2Simulation.Authoring
             {
                 DragAndDrop.visualMode = DragAndDropVisualMode.Copy; // show a drag-add icon on the mouse cursor
 
-                if (DraggedObject == null)
+                if (DraggedObject == default)
                 {
                     DraggedObject = (GameObject)DragAndDrop.objectReferences[0];
                     DraggedGridOccupier = DraggedObject.GetComponent<GridOccupier>();
+                    _initialDraggedGridX = DraggedGridOccupier.X;
+                    _initialDraggedGridY = DraggedGridOccupier.Y;
                 }
 
                 var ray = Camera.current.ScreenPointToRay(new Vector3(Event.current.mousePosition.x, Camera.current.pixelRect.height - Event.current.mousePosition.y, 0.0f));
@@ -110,6 +115,16 @@ namespace Sc2Simulation.Authoring
                 }
 
                 Event.current.Use();
+            }
+            else
+            {
+                if (DraggedGridOccupier != default)
+                {
+                    DraggedGridOccupier.X = _initialDraggedGridX;
+                    DraggedGridOccupier.Y = _initialDraggedGridY;
+                    DraggedObject = default;
+                    DraggedGridOccupier = default;
+                }
             }
         }
     }
