@@ -116,7 +116,7 @@ namespace Sc2Simulation.Authoring
 
                 Event.current.Use();
             }
-            else
+            else if (Event.current.type == EventType.DragExited)
             {
                 if (DraggedGridOccupier != default)
                 {
