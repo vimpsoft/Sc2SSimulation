@@ -11,5 +11,7 @@ namespace Sc2Simulation.Brirge
         public GridOccupierRotation GridRotation;
         public Vector2 Position;
         public Vector4 Rotation;
+
+        public SerializedComponentInfo[] Components;
     }
 }

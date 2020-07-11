@@ -9,22 +9,22 @@ public class HatcheriesSystem : SystemBase
     {
         float deltaTime = Time.DeltaTime;
 
-        Entities
-            .WithName("Hatchery")
-            .ForEach((ref Hatchery hatch) =>
-            {
-                if (hatch.LarvaeSupply >= _naturalLarvaeMaxCount)
-                    return;
+        //Entities
+        //    .WithName("Hatchery")
+        //    .ForEach((ref Hatchery hatch) =>
+        //    {
+        //        if (hatch.LarvaeSupply >= _naturalLarvaeMaxCount)
+        //            return;
 
-                hatch.NaturalLarvaeProductionTimer += deltaTime;
-                if (hatch.NaturalLarvaeProductionTimer >= _larvaeNaturalProductionTime)
-                {
-                    var remainder = hatch.NaturalLarvaeProductionTimer - _larvaeNaturalProductionTime;
-                    hatch.LarvaeSupply += 1;
-                    if (hatch.LarvaeSupply < _naturalLarvaeMaxCount)
-                        hatch.NaturalLarvaeProductionTimer = remainder;
-                }
-            })
-            .ScheduleParallel();
+        //        hatch.NaturalLarvaeProductionTimer += deltaTime;
+        //        if (hatch.NaturalLarvaeProductionTimer >= _larvaeNaturalProductionTime)
+        //        {
+        //            var remainder = hatch.NaturalLarvaeProductionTimer - _larvaeNaturalProductionTime;
+        //            hatch.LarvaeSupply += 1;
+        //            if (hatch.LarvaeSupply < _naturalLarvaeMaxCount)
+        //                hatch.NaturalLarvaeProductionTimer = remainder;
+        //        }
+        //    })
+        //    .ScheduleParallel();
     }
 }
