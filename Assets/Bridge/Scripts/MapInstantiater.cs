@@ -3,7 +3,6 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
-using static Unity.Entities.GameObjectConversionUtility;
 
 namespace Sc2Simulation.Brirge
 {
@@ -15,7 +14,7 @@ namespace Sc2Simulation.Brirge
         private void Start()
         {
             var settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, null);
-            settings.ConversionFlags = ConversionFlags.AssignName;
+            settings.ConversionFlags = GameObjectConversionUtility.ConversionFlags.AssignName;
             var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
             var entityInfos = _map.EntityInfos;
             var entityPrefabs = new Dictionary<GameObject, Entity>();
@@ -25,7 +24,7 @@ namespace Sc2Simulation.Brirge
                 var currentInfo = entityInfos[i];
                 if (!entityPrefabs.ContainsKey(currentInfo.Entity))
                 {
-                    var entityPrefab = ConvertGameObjectHierarchy(currentInfo.Entity, settings);
+                    var entityPrefab = GameObjectConversionUtility.ConvertGameObjectHierarchy(currentInfo.Entity, settings);
                     entityPrefabs.Add(currentInfo.Entity, entityPrefab);
                 }
                 var instance = entityManager.Instantiate(entityPrefabs[currentInfo.Entity]);
@@ -45,7 +44,11 @@ namespace Sc2Simulation.Brirge
                 {
                     var info = infos[j];
                     var converterType = ComponentsTable.GetComponentData(info.Id);
-                    entityManager.AddComponentObject(entity, (JsonUtility.FromJson(info.Data, converterType) as ComponentConvertion).Convert(entityInstances));
+                    var componentObject =
+                        (JsonUtility.FromJson(info.Data, converterType) as ComponentConvertion)
+                        .Convert(entityInstances);
+                    var type = componentObject.GetType();
+                    entityManager.AddComponentObject(entity, componentObject);
                 }
             }
         }

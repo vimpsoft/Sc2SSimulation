@@ -1,4 +1,4 @@
-﻿using Sc2Simulation.Runtime;
+﻿using Sc2Simulation.Runtime.Mining;
 using System;
 using Unity.Entities;
 
