@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Sc2Simulation.Runtime.Buildings;
 using Sc2Simulation.Runtime.Mining;
 using Unity.Entities;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace Sc2Simulation.Brirge
         private static Dictionary<string, (Type converterType, Action<World, Entity, object> addingFunction)> _convertersMap = new Dictionary<string, (Type converterType, Action<World, Entity, object>)>()
         {
             { nameof(MineCommandConversion), (typeof(MineCommandConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (MineCommand) o))}
+            , { nameof(MineralsCarrierConversion), (typeof(MineralsCarrierConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (MineralsCarrier) o))}
+            , { nameof(MineralDruseConversion), (typeof(MineralDruseConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (MineralDruse) o))}
         };
 
         public static void AddComponentData(this World world, string converterTypeId, Entity target, Entity[] allEntities,
