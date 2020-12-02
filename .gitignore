@@ -26,6 +26,8 @@ QCAR/
 
 UnityPackageManager/
 
+UserSettings/
+
 project.json
 
 project.lock.json

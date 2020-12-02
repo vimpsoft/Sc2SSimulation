@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Sc2Simulation.Runtime.Mining;
+using Unity.Entities;
+using UnityEngine;
 
 namespace Sc2Simulation.Brirge
 {
@@ -10,12 +13,19 @@ namespace Sc2Simulation.Brirge
     /// </summary>
     public static class ComponentsTable
     {
-
-        private static Dictionary<string, Type> _map = new Dictionary<string, Type>()
+        private static Dictionary<string, (Type converterType, Action<World, Entity, object> addingFunction)> _convertersMap = new Dictionary<string, (Type converterType, Action<World, Entity, object>)>()
         {
-            { nameof(MineCommandConversion), typeof(MineCommandConversion) }
+            { nameof(MineCommandConversion), (typeof(MineCommandConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (MineCommand) o))}
         };
 
-        public static Type GetComponentData(string componentId) => _map[componentId];
+        public static void AddComponentData(this World world, string converterTypeId, Entity target, Entity[] allEntities,
+            string serializedData)
+        {
+            var converterType = _convertersMap[converterTypeId];
+            var componentObject =
+                (JsonUtility.FromJson(serializedData, converterType.converterType) as ComponentConvertion)
+                .Convert(allEntities);
+            converterType.addingFunction(world, target, componentObject);
+        }
     }
 }

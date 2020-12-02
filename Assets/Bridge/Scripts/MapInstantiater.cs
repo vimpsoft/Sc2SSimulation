@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Sc2Simulation.Runtime.Mining;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -42,13 +43,21 @@ namespace Sc2Simulation.Brirge
 
                 for (int j = 0; j < infos.Length; j++)
                 {
+                    /*
+                     * Итак, у нас есть имя типа конвертера, энтитя, список энтитей, ворлд... что еще нужно? Да вроде бы все...
+                     * Нам тут при инстанцировании важно не знать что мы инстанцируем, поэтому всю олологику придется пхать в один класс
+                     */
                     var info = infos[j];
-                    var converterType = ComponentsTable.GetComponentData(info.Id);
-                    var componentObject =
-                        (JsonUtility.FromJson(info.Data, converterType) as ComponentConvertion)
-                        .Convert(entityInstances);
-                    var type = componentObject.GetType();
-                    entityManager.AddComponentObject(entity, componentObject);
+                    //var converterType = ComponentsTable.GetComponentData(info.ConverterTypeId);
+                    //var componentObject =
+                    //    (JsonUtility.FromJson(info.SerializedData, converterType) as ComponentConvertion)
+                    //    .Convert(entityInstances);
+                    //var type = componentObject.GetType();
+                    //var mine = new MineCommand(){ TargetDruse = entity };
+                    //entityManager.AddComponentData<MineCommand>(entity, mine);
+                    World.DefaultGameObjectInjectionWorld.AddComponentData(info.ConverterTypeId, entity, entityInstances, info.SerializedData);
+                    //entityManager.AddComponentObject(entity, componentObject);
+                    //entityManager.AddComponent()
                 }
             }
         }

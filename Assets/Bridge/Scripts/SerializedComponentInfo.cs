@@ -5,13 +5,13 @@ namespace Sc2Simulation.Brirge
     [Serializable]
     public struct SerializedComponentInfo
     {
-        public string Id;
-        public string Data;
+        public string ConverterTypeId;
+        public string SerializedData;
 
-        public SerializedComponentInfo(string id, string data)
+        public SerializedComponentInfo(string converterTypeId, string serializedData)
         {
-            Id = id;
-            Data = data;
+            ConverterTypeId = converterTypeId;
+            SerializedData = serializedData;
         }
     }
 }

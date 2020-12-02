@@ -27,10 +27,10 @@ namespace Sc2Simulation.Runtime.Moving
 
         private struct EmptyMinerJob : IJobChunk
         {
-            public ArchetypeChunkComponentType<MineCommand> MineCommandType;
-            public ArchetypeChunkComponentType<Translation> TranslationType;
-            public EntityCommandBuffer.Concurrent Ecb;
-            public ArchetypeChunkEntityType EntityType;
+            public ComponentTypeHandle<MineCommand> MineCommandType;
+            public ComponentTypeHandle<Translation> TranslationType;
+            public EntityCommandBuffer.ParallelWriter Ecb;
+            public EntityTypeHandle EntityType;
 
             public void Execute(ArchetypeChunk chunk, int chunkIndex, int firstEntityIndex)
             {
