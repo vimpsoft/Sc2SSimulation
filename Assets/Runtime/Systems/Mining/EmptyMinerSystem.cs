@@ -1,5 +1,4 @@
-﻿using Sc2Simulation.Runtime.Mining;
-using Unity.Collections;
+﻿using Unity.Collections;
 using Unity.Entities;
 
 namespace Sc2Simulation.Runtime.Mining
@@ -15,10 +14,22 @@ namespace Sc2Simulation.Runtime.Mining
 
         protected override void OnCreate()
         {
+            //var queryDescription0 = new EntityQueryDesc
+            //{
+            //    None = new[] { ComponentType.ReadOnly<Minerals>(), ComponentType.ReadOnly<Assets.Runtime.Components.Moving.Destination>() },
+            //    All = new[] { ComponentType.ReadOnly<MineCommand>() }
+            //};
+
+            //var queryDescription1 = new EntityQueryDesc
+            //{
+            //    All = new ComponentType[] { typeof(RotationSpeed) }
+            //};
+
+            //m_Query = GetEntityQuery(new EntityQueryDesc[] { queryDescription0, queryDescription1 });
             _query = GetEntityQuery(new EntityQueryDesc()
             {
-                None = new ComponentType[] { ComponentType.ReadOnly<Minerals>(), ComponentType.ReadOnly<Assets.Runtime.Components.Moving.Moving>() },
-                All = new ComponentType[] { ComponentType.ReadOnly<MineCommand>() }
+                None = new [] { ComponentType.ReadOnly<Minerals>(), ComponentType.ReadOnly<Assets.Runtime.Components.Moving.Destination>() },
+                All = new [] { ComponentType.ReadOnly<MineCommand>() }
             });
 
             _miningEndBarrier = World.GetOrCreateSystem<MiningEndBarrier>();
@@ -32,12 +43,14 @@ namespace Sc2Simulation.Runtime.Mining
 
             public void Execute(ArchetypeChunk chunk, int chunkIndex, int firstEntityIndex)
             {
-                //var mineCommands = chunk.GetNativeArray(MineCommandType);
+                var mineCommands = chunk.GetNativeArray(MineCommandType);
                 var entities = chunk.GetNativeArray(EntityTypeHandle);
 
                 for (var i = 0; i < chunk.Count; i++)
                 {
-                    Ecb.AddComponent<Assets.Runtime.Components.Moving.Moving>(i, entities[i]);
+                    var druseDestination = new Assets.Runtime.Components.Moving.Destination();
+                    //druseDestination.Position = mineCommands[i].TargetDruse
+                    //Ecb.AddComponent(i, entities[i], druseDestination);
 
                     //var rotation = chunkRotations[i];
                     //var rotationSpeed = chunkRotationSpeeds[i];

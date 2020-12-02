@@ -5,6 +5,6 @@ namespace Sc2Simulation.Runtime.Mining
 {
     public struct MineralsCarrier : IComponentData
     {
-        public float MineralsCount;
+        public float Count;
     }
 }
