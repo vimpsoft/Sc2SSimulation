@@ -1,4 +1,5 @@
 ﻿using Sc2Simulation.Runtime.Mining;
+using Unity.Collections;
 using Unity.Entities;
 
 namespace Sc2Simulation.Runtime.Mining
@@ -6,47 +7,63 @@ namespace Sc2Simulation.Runtime.Mining
     /// <summary>
     /// Система отвечает за поведение пустого майнера. Логика такая:
     /// </summary>
-    //[UpdateAfter(typeof(FullMinerSystem))] //чтобы подхватить пустого рабочего сразу же после отдачи минералов
-    //public class EmptyMinerSystem : SystemBase
-    //{
-    //    private EntityQuery _query;
+    [AlwaysUpdateSystem] //чтобы подхватить пустого рабочего сразу же после отдачи минералов
+    public class EmptyMinerSystem : SystemBase
+    {
+        private MiningEndBarrier _miningEndBarrier;
+        private EntityQuery _query;
 
-    //    protected override void OnCreate() => GetEntityQuery(new EntityQueryDesc()
-    //    {
-    //        None = new ComponentType[] { ComponentType.ReadOnly<Minerals>() },
-    //        All = new ComponentType[] { ComponentType.ReadOnly<MineCommand>() }
-    //    });
+        protected override void OnCreate()
+        {
+            _query = GetEntityQuery(new EntityQueryDesc()
+            {
+                None = new ComponentType[] { ComponentType.ReadOnly<Minerals>(), ComponentType.ReadOnly<Assets.Runtime.Components.Moving.Moving>() },
+                All = new ComponentType[] { ComponentType.ReadOnly<MineCommand>() }
+            });
 
-    //    private struct EmptyMinerJob : IJobChunk
-    //    {
-    //        public ArchetypeChunkComponentType<MineCommand> MineCommandType;
+            _miningEndBarrier = World.GetOrCreateSystem<MiningEndBarrier>();
+        }
 
-    //        public void Execute(ArchetypeChunk chunk, int chunkIndex, int firstEntityIndex)
-    //        {
-    //            var mineCommands = chunk.GetNativeArray(MineCommandType);
-    //            for (var i = 0; i < chunk.Count; i++)
-    //            {
-    //                var rotation = chunkRotations[i];
-    //                var rotationSpeed = chunkRotationSpeeds[i];
+        private struct EmptyMinerJob : IJobChunk
+        {
+            public ComponentTypeHandle<MineCommand> MineCommandType;
+            [ReadOnly] public EntityTypeHandle EntityTypeHandle;
+            public EntityCommandBuffer.ParallelWriter Ecb;
 
-    //                // Rotate something about its up vector at the speed given by RotationSpeed_IJobChunk.
-    //                chunkRotations[i] = new Rotation
-    //                {
-    //                    Value = math.mul(math.normalize(rotation.Value),
-    //                        quaternion.AxisAngle(math.up(), rotationSpeed.RadiansPerSecond * DeltaTime))
-    //                };
-    //            }
-    //        }
-    //    }
+            public void Execute(ArchetypeChunk chunk, int chunkIndex, int firstEntityIndex)
+            {
+                //var mineCommands = chunk.GetNativeArray(MineCommandType);
+                var entities = chunk.GetNativeArray(EntityTypeHandle);
 
-    //    protected override void OnUpdate()
-    //    {
-    //        var job = new EmptyMinerJob()
-    //        {
-    //            MineCommandType = GetArchetypeChunkComponentType<MineCommand>()
-    //        };
+                for (var i = 0; i < chunk.Count; i++)
+                {
+                    Ecb.AddComponent<Assets.Runtime.Components.Moving.Moving>(i, entities[i]);
 
-    //        Dependency = job.Schedule(_query, Dependency);
-    //    }
-    //}
+                    //var rotation = chunkRotations[i];
+                    //var rotationSpeed = chunkRotationSpeeds[i];
+
+                    //// Rotate something about its up vector at the speed given by RotationSpeed_IJobChunk.
+                    //chunkRotations[i] = new Rotation
+                    //{
+                    //    Value = math.mul(math.normalize(rotation.Value),
+                    //        quaternion.AxisAngle(math.up(), rotationSpeed.RadiansPerSecond * DeltaTime))
+                    //};
+                }
+            }
+        }
+
+        protected override void OnUpdate()
+        {
+            var ecb = _miningEndBarrier.CreateCommandBuffer().AsParallelWriter();
+            var job = new EmptyMinerJob()
+            {
+                MineCommandType = GetComponentTypeHandle<MineCommand>(),
+                EntityTypeHandle = GetEntityTypeHandle(),
+                Ecb = ecb
+            };
+
+            Dependency = job.Schedule(_query, Dependency);
+            _miningEndBarrier.AddJobHandleForProducer(Dependency);
+        }
+    }
 }
