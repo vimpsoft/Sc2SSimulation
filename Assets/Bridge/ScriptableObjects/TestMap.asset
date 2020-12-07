@@ -133,53 +133,85 @@ MonoBehaviour:
     GridRotation: 1
     Position: {x: 6, y: -4}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components: []
+    Components:
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 7, y: -3}
     GridRotation: 1
     Position: {x: 7, y: -3}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components: []
+    Components:
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 5, y: 5}
     GridRotation: 1
     Position: {x: 5, y: 5}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components: []
+    Components:
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 7, y: 1}
     GridRotation: 1
     Position: {x: 7, y: 1}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components: []
+    Components:
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 6, y: -2}
     GridRotation: 1
     Position: {x: 6, y: -2}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components: []
+    Components:
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 6, y: 4}
     GridRotation: 1
     Position: {x: 6, y: 4}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components: []
+    Components:
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 6, y: 2}
     GridRotation: 1
     Position: {x: 6, y: 2}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components: []
+    Components:
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 6, y: 0}
     GridRotation: 1
     Position: {x: 6.71, y: 0}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components: []
+    Components:
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'

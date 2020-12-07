@@ -1,5 +1,8 @@
-﻿using Unity.Collections;
+﻿using Sc2Simulation.Runtime.Buildings;
+using Unity.Collections;
 using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Transforms;
 
 namespace Sc2Simulation.Runtime.Mining
 {
@@ -10,7 +13,7 @@ namespace Sc2Simulation.Runtime.Mining
     public class EmptyMinerSystem : SystemBase
     {
         private MiningEndBarrier _miningEndBarrier;
-        private EntityQuery _query;
+        private EntityQuery _queryMiners;
 
         protected override void OnCreate()
         {
@@ -22,14 +25,14 @@ namespace Sc2Simulation.Runtime.Mining
 
             //var queryDescription1 = new EntityQueryDesc
             //{
-            //    All = new ComponentType[] { typeof(RotationSpeed) }
+            //    All = new [] { ComponentType.ReadOnly<MineralDruse>(), ComponentType.ReadOnly<Translation>() }
             //};
 
-            //m_Query = GetEntityQuery(new EntityQueryDesc[] { queryDescription0, queryDescription1 });
-            _query = GetEntityQuery(new EntityQueryDesc()
+            //_query = GetEntityQuery(queryDescription0, queryDescription1);
+            _queryMiners = GetEntityQuery(new EntityQueryDesc()
             {
-                None = new [] { ComponentType.ReadOnly<Minerals>(), ComponentType.ReadOnly<Assets.Runtime.Components.Moving.Destination>() },
-                All = new [] { ComponentType.ReadOnly<MineCommand>() }
+                None = new[] { ComponentType.ReadOnly<Minerals>(), ComponentType.ReadOnly<Assets.Runtime.Components.Moving.Destination>() },
+                All = new[] { ComponentType.ReadOnly<MineCommand>() }
             });
 
             _miningEndBarrier = World.GetOrCreateSystem<MiningEndBarrier>();
@@ -38,19 +41,22 @@ namespace Sc2Simulation.Runtime.Mining
         private struct EmptyMinerJob : IJobChunk
         {
             public ComponentTypeHandle<MineCommand> MineCommandType;
+            public ComponentTypeHandle<MineralDruse> MineralDruseType;
             [ReadOnly] public EntityTypeHandle EntityTypeHandle;
-            public EntityCommandBuffer.ParallelWriter Ecb;
+            public EntityCommandBuffer.ParallelWriter Ecb; 
+            [ReadOnly] public ComponentDataFromEntity<Translation> MineralDrusePositions;
 
             public void Execute(ArchetypeChunk chunk, int chunkIndex, int firstEntityIndex)
             {
                 var mineCommands = chunk.GetNativeArray(MineCommandType);
+                //var mineralDruses = chunk.GetNativeArray(MineralDruseType);
                 var entities = chunk.GetNativeArray(EntityTypeHandle);
 
                 for (var i = 0; i < chunk.Count; i++)
                 {
                     var druseDestination = new Assets.Runtime.Components.Moving.Destination();
-                    //druseDestination.Position = mineCommands[i].TargetDruse
-                    //Ecb.AddComponent(i, entities[i], druseDestination);
+                    druseDestination.Position = MineralDrusePositions[mineCommands[i].TargetDruse].Value;
+                    Ecb.AddComponent(i, entities[i], druseDestination);
 
                     //var rotation = chunkRotations[i];
                     //var rotationSpeed = chunkRotationSpeeds[i];
@@ -67,15 +73,25 @@ namespace Sc2Simulation.Runtime.Mining
 
         protected override void OnUpdate()
         {
+            //var cellAlignment = new NativeArray<float3>(boidCount, Allocator.TempJob, NativeArrayOptions.UninitializedMemory);
+            //var allMineralDruses = Entities
+            //    .ForEach((int entityInQueryIndex, in MineralDruse mineralDruse, in Translation translation) =>
+            //    {
+            //        cellAlignment[entityInQueryIndex] = localToWorld.Forward;
+            //    })
+            //    .ScheduleParallel(Dependency);
+
             var ecb = _miningEndBarrier.CreateCommandBuffer().AsParallelWriter();
             var job = new EmptyMinerJob()
             {
                 MineCommandType = GetComponentTypeHandle<MineCommand>(),
+                MineralDruseType = GetComponentTypeHandle<MineralDruse>(),
                 EntityTypeHandle = GetEntityTypeHandle(),
+                MineralDrusePositions = GetComponentDataFromEntity<Translation>(true),
                 Ecb = ecb
             };
 
-            Dependency = job.Schedule(_query, Dependency);
+            Dependency = job.Schedule(_queryMiners, Dependency);
             _miningEndBarrier.AddJobHandleForProducer(Dependency);
         }
     }
