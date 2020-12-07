@@ -21,7 +21,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":13}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -30,7 +32,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":13}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -39,7 +43,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":14}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -48,7 +54,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":15}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -57,7 +65,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":15}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -66,7 +76,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":16}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -75,7 +87,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":17}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -84,7 +98,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":18}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -93,7 +109,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":18}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -102,7 +120,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":19}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -111,7 +131,9 @@ MonoBehaviour:
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     Components:
     - ConverterTypeId: MineCommandConversion
-      SerializedData: '{"TargetDruse":20}'
+      SerializedData: '{"TargetDruse":19}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -121,6 +143,8 @@ MonoBehaviour:
     Components:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":20}'
+    - ConverterTypeId: MovableConversion
+      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
   - Entity: {fileID: 159691100011000376, guid: 3773dfddbde1ac74e93e67ee8a91127c, type: 3}
     GridPosition: {x: 0, y: 0}
     GridRotation: 0
@@ -129,59 +153,15 @@ MonoBehaviour:
     Components: []
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
-    GridPosition: {x: 6, y: -4}
-    GridRotation: 1
-    Position: {x: 6, y: -4}
-    Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components:
-    - ConverterTypeId: MineralDruseConversion
-      SerializedData: '{}'
-    - ConverterTypeId: MineralsCarrierConversion
-      SerializedData: '{"Count":5000.0}'
-  - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
-      type: 3}
-    GridPosition: {x: 7, y: -3}
-    GridRotation: 1
-    Position: {x: 7, y: -3}
-    Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components:
-    - ConverterTypeId: MineralDruseConversion
-      SerializedData: '{}'
-    - ConverterTypeId: MineralsCarrierConversion
-      SerializedData: '{"Count":5000.0}'
-  - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
-      type: 3}
     GridPosition: {x: 5, y: 5}
     GridRotation: 1
     Position: {x: 5, y: 5}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
     Components:
-    - ConverterTypeId: MineralDruseConversion
-      SerializedData: '{}'
     - ConverterTypeId: MineralsCarrierConversion
       SerializedData: '{"Count":5000.0}'
-  - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
-      type: 3}
-    GridPosition: {x: 7, y: 1}
-    GridRotation: 1
-    Position: {x: 7, y: 1}
-    Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components:
     - ConverterTypeId: MineralDruseConversion
       SerializedData: '{}'
-    - ConverterTypeId: MineralsCarrierConversion
-      SerializedData: '{"Count":5000.0}'
-  - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
-      type: 3}
-    GridPosition: {x: 6, y: -2}
-    GridRotation: 1
-    Position: {x: 6, y: -2}
-    Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-    Components:
-    - ConverterTypeId: MineralDruseConversion
-      SerializedData: '{}'
-    - ConverterTypeId: MineralsCarrierConversion
-      SerializedData: '{"Count":5000.0}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 6, y: 4}
@@ -189,10 +169,10 @@ MonoBehaviour:
     Position: {x: 6, y: 4}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
     Components:
-    - ConverterTypeId: MineralDruseConversion
-      SerializedData: '{}'
     - ConverterTypeId: MineralsCarrierConversion
       SerializedData: '{"Count":5000.0}'
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 6, y: 2}
@@ -200,10 +180,21 @@ MonoBehaviour:
     Position: {x: 6, y: 2}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
     Components:
-    - ConverterTypeId: MineralDruseConversion
-      SerializedData: '{}'
     - ConverterTypeId: MineralsCarrierConversion
       SerializedData: '{"Count":5000.0}'
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+  - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
+      type: 3}
+    GridPosition: {x: 7, y: 1}
+    GridRotation: 1
+    Position: {x: 7, y: 1}
+    Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+    Components:
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
   - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
       type: 3}
     GridPosition: {x: 6, y: 0}
@@ -211,7 +202,40 @@ MonoBehaviour:
     Position: {x: 6.71, y: 0}
     Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
     Components:
-    - ConverterTypeId: MineralDruseConversion
-      SerializedData: '{}'
     - ConverterTypeId: MineralsCarrierConversion
       SerializedData: '{"Count":5000.0}'
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+  - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
+      type: 3}
+    GridPosition: {x: 6, y: -2}
+    GridRotation: 1
+    Position: {x: 6, y: -2}
+    Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+    Components:
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+  - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
+      type: 3}
+    GridPosition: {x: 7, y: -3}
+    GridRotation: 1
+    Position: {x: 7, y: -3}
+    Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+    Components:
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'
+  - Entity: {fileID: 4435074154739565054, guid: 68daff5fe270f8d4fbb195268525d2c6,
+      type: 3}
+    GridPosition: {x: 6, y: -4}
+    GridRotation: 1
+    Position: {x: 6, y: -4}
+    Rotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+    Components:
+    - ConverterTypeId: MineralsCarrierConversion
+      SerializedData: '{"Count":5000.0}'
+    - ConverterTypeId: MineralDruseConversion
+      SerializedData: '{}'

@@ -1,87 +1,49 @@
-﻿using Sc2Simulation.Runtime.Mining;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Runtime.Components.Moving;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Sc2Simulation.Runtime.Moving
-{/*
-  * Ок, для начала я сделаю такую логику: если 
-  */
+{
     public class MoveSystem : SystemBase
     {
-        private EntityQuery _query;
+        private EntityQuery _destinationQuery;
         private MiningEndBarrier _miningEndBarrier;
 
         protected override void OnCreate()
         {
             base.OnCreate();
 
-            _query = GetEntityQuery
+            _destinationQuery = GetEntityQuery
             (
-                new EntityQueryDesc() { All = new ComponentType[] { ComponentType.ReadOnly<MineCommand>() } }
+                new EntityQueryDesc() { All = new ComponentType[] { ComponentType.ReadOnly<Destination>(), ComponentType.ReadOnly<Movable>() } }
             );
             _miningEndBarrier = World.GetOrCreateSystem<MiningEndBarrier>();
         }
 
-        private struct EmptyMinerJob : IJobChunk
+        private struct MoveJob : IJobChunk
         {
-            public ComponentTypeHandle<MineCommand> MineCommandType;
-            public ComponentTypeHandle<Translation> TranslationType;
-            public EntityCommandBuffer.ParallelWriter Ecb;
-            public EntityTypeHandle EntityType;
+            [ReadOnly] public ComponentTypeHandle<Translation> TranslationType;
+            [ReadOnly] public EntityTypeHandle EntityType;
 
             public void Execute(ArchetypeChunk chunk, int chunkIndex, int firstEntityIndex)
             {
-                //var mineCommands = chunk.GetNativeArray(MineCommandType);
-                //var mainBuildings = chunk.GetNativeArray(MainBuildingType);
-                //var entities = chunk.GetNativeArray(EntityType);
+                for (var i = 0; i < chunk.Count; i++)
+                {
 
-                //if (chunk.Has(HasPathToMainBuildingType))
-                //{
-                //    var translations = chunk.GetNativeArray(TranslationType);
-
-                //    for (int i = 0; i < chunk.Count; i++)
-                //    {
-                //        var nearestMainBuilding = mainBuildings[]
-                //            var distance = math.distance();
-                //    }
-                //}
-                //for (var i = 0; i < chunk.Count; i++)
-                //{
-                //    if (mainBuildings.Length == 0)
-                //        Ecb.RemoveComponent<MineCommand>(i, entities[i]);
-                //    else
-                //    {
-
-                //    }
-                //    var rotation = chunkRotations[i];
-                //    var rotationSpeed = chunkRotationSpeeds[i];
-
-                //    // Rotate something about its up vector at the speed given by RotationSpeed_IJobChunk.
-                //    chunkRotations[i] = new Rotation
-                //    {
-                //        Value = math.mul(math.normalize(rotation.Value),
-                //            quaternion.AxisAngle(math.up(), rotationSpeed.RadiansPerSecond * DeltaTime))
-                //    };
-                //}
+                }
             }
         }
 
         protected override void OnUpdate()
         {
-            //var ecb = _miningEndBarrier.CreateCommandBuffer().ToConcurrent();
-            //var entityType = GetArchetypeChunkEntityType();
-            //var job = new EmptyMinerJob()
-            //{
-            //    MineCommandType = GetArchetypeChunkComponentType<MineCommand>(),
-            //    TranslationType = GetArchetypeChunkComponentType<Translation>(),
-            //    Ecb = ecb,
-            //    EntityType = entityType
-            //};
+            var job = new MoveJob()
+            {
+                TranslationType = GetComponentTypeHandle<Translation>(),
+                EntityType = GetEntityTypeHandle()
+            };
 
-            //Dependency = job.Schedule(_query, Dependency);
+            Dependency = job.Schedule(_destinationQuery, Dependency);
         }
     }
 }

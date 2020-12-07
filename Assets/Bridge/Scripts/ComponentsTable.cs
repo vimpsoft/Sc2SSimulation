@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Sc2Simulation.Runtime.Buildings;
 using Sc2Simulation.Runtime.Mining;
+using Sc2Simulation.Runtime.Moving;
 using Unity.Entities;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ namespace Sc2Simulation.Brirge
             { nameof(MineCommandConversion), (typeof(MineCommandConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (MineCommand) o))}
             , { nameof(MineralsCarrierConversion), (typeof(MineralsCarrierConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (MineralsCarrier) o))}
             , { nameof(MineralDruseConversion), (typeof(MineralDruseConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (MineralDruse) o))}
+            , { nameof(MovableConversion), (typeof(MovableConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (Movable) o))}
+            , { nameof(SpeedConversion), (typeof(SpeedConversion), (w, e, o) => w.EntityManager.AddComponentData(e, (Speed) o))}
         };
 
         public static void AddComponentData(this World world, string converterTypeId, Entity target, Entity[] allEntities,

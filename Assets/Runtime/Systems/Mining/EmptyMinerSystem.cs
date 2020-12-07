@@ -55,7 +55,7 @@ namespace Sc2Simulation.Runtime.Mining
                 for (var i = 0; i < chunk.Count; i++)
                 {
                     var druseDestination = new Assets.Runtime.Components.Moving.Destination();
-                    druseDestination.Position = MineralDrusePositions[mineCommands[i].TargetDruse].Value;
+                    druseDestination.Value = MineralDrusePositions[mineCommands[i].TargetDruse].Value;
                     Ecb.AddComponent(i, entities[i], druseDestination);
 
                     //var rotation = chunkRotations[i];
