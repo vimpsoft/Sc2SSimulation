@@ -23,7 +23,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":13}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -34,7 +36,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":13}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -45,7 +49,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":14}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -56,7 +62,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":15}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -67,7 +75,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":15}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -78,7 +88,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":16}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -89,7 +101,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":17}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -100,7 +114,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":18}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -111,7 +127,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":18}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -122,7 +140,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":19}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -133,7 +153,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":19}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 6059536412755768597, guid: 7481815bb6d6d274a81e1e43a73dac24,
       type: 3}
     GridPosition: {x: 0, y: 0}
@@ -144,7 +166,9 @@ MonoBehaviour:
     - ConverterTypeId: MineCommandConversion
       SerializedData: '{"TargetDruse":20}'
     - ConverterTypeId: MovableConversion
-      SerializedData: '{"CurrentSpeed":0.0,"Acceleration":1.0,"MaxSpeed":1.0}'
+      SerializedData: '{"Acceleration":5.0,"MaxSpeed":5.0}'
+    - ConverterTypeId: SpeedConversion
+      SerializedData: '{"Value":0.0}'
   - Entity: {fileID: 159691100011000376, guid: 3773dfddbde1ac74e93e67ee8a91127c, type: 3}
     GridPosition: {x: 0, y: 0}
     GridRotation: 0

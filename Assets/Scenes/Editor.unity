@@ -223,8 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &20441939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,8 +475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &322794282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -804,8 +804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &592289635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,8 +1029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &874270240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,8 +1144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &897130752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,8 +1381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &1341093345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,8 +1945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &1575865340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2060,8 +2060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &1601585230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2175,8 +2175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &1633490626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2534,8 +2534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &1759770215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,8 +2649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &1925227162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2833,8 +2833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a4c4a068a433642a3479a61eef3dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 1
-  MaxSpeed: 1
+  Acceleration: 5
+  MaxSpeed: 5
 --- !u!114 &2116920049
 MonoBehaviour:
   m_ObjectHideFlags: 0
